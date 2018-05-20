@@ -1,12 +1,13 @@
 
 PImage pic;
+float factor = 1; // Change the number of colours.
 
 void setup() {
   size(1440,720);
+  //pic = loadImage("face.jpg");
   //pic = loadImage("faceLow.jpg");
-  pic = loadImage("face.jpg");
-  //pic = loadImage("dogLow.jpg");
-  //pic = loadImage("faceLow.jpg");
+  //pic = loadImage("dog.jpg");
+  pic = loadImage("dogLow.jpg");
   //pic.filter(GRAY);
   image(pic,0,0,720,720);
   differ();
@@ -34,7 +35,7 @@ void differ() {
         float oldG = green(pix);
         float oldB = blue(pix);
         
-        float factor = 1;
+
         float newR = round(factor * oldR / 255) * (255/factor);
         float newG = round(factor * oldG / 255) * (255/factor);
         float newB = round(factor * oldB / 255) * (255/factor);
